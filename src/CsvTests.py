@@ -7,6 +7,11 @@ class MyTestCase(unittest.TestCase):
 
     def setUp(self) -> None:
         self.csv_reader = CsvReader('UnitTestAddition.csv')
+        self.csv_reader = CsvReader('UnitTestSubtraction.csv')
+        self.csv_reader = CsvReader('UnitTestMultiplication.csv')
+        self.csv_reader = CsvReader('UnitTestDivision.csv')
+        self.csv_reader = CsvReader('UnitTestSquare.csv')
+        self.csv_reader = CsvReader('UnitTestSquareRoot.csv')
 
     def test_return_data_as_objects(self):
         people = self.csv_reader.return_data_as_objects('person')
