@@ -15,7 +15,7 @@ def division(a, b):
 
 
 def squaring(a):
-    return a ** 2
+    return int(a) ** 2
 
 
 def squarerooting(a):

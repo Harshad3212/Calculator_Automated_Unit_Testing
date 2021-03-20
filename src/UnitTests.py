@@ -37,8 +37,9 @@ class Testing(unittest.TestCase):
             self.assertEqual(self.calculator.result, float(row['divideresult']))
 
     def test_square_method_calculator(self):
-        self.assertEqual(self.calculator.square(5), 25)
-        self.assertEqual(self.calculator.result, 25)
+        for row in test_data:
+            self.assertEqual(self.calculator.square(row['sqvalue1']), int(row['sqresult']))
+            self.assertEqual(self.calculator.result, int(row['sqresult']))
 
     def test_square_root_method_calculator(self):
         self.assertEqual(self.calculator.squareroot(25), 5)
