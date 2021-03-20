@@ -32,8 +32,9 @@ class Testing(unittest.TestCase):
             self.assertEqual(self.calculator.result, int(row['mresult']))
 
     def test_divide_method_calculator(self):
-        self.assertEqual(self.calculator.divide(5, 5), 1)
-        self.assertEqual(self.calculator.result, 1)
+        for row in test_data:
+            self.assertEqual(self.calculator.divide(row['dvalue1'], row['dvalue2']),float(row['divideresult']))
+            self.assertEqual(self.calculator.result, float(row['divideresult']))
 
     def test_square_method_calculator(self):
         self.assertEqual(self.calculator.square(5), 25)
