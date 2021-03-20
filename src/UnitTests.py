@@ -2,6 +2,8 @@ import unittest
 from CsvReader import CsvReader
 from calculator import Calculator
 
+test_data = CsvReader('/src/UnitTestAll.csv').data
+
 
 class Testing(unittest.TestCase):
 
@@ -15,14 +17,14 @@ class Testing(unittest.TestCase):
         self.assertEqual(self.calculator.result, 0)
 
     def test_add_method_calculator(self):
-        test_data = CsvReader('/src/UnitTestAddition.csv').data
         for row in test_data:
-            self.assertEqual(self.calculator.add(row['Value 1'], row['Value 2']), int(row['Result']))
-            self.assertEqual(self.calculator.result, int(row['Result']))
+            self.assertEqual(self.calculator.add(row['avalue1'], row['avalue2']), int(row['aresult']))
+            self.assertEqual(self.calculator.result, int(row['aresult']))
 
     def test_subtract_method_calculator(self):
-        self.assertEqual(self.calculator.subtract(5, 5), 0)
-        self.assertEqual(self.calculator.result, 0)
+        for row in test_data:
+            self.assertEqual(self.calculator.subtract(row['svalue1'], row['svalue2']), int(row['subresult']))
+            self.assertEqual(self.calculator.result, int(row['subresult']))
 
     def test_multiply_method_calculator(self):
         self.assertEqual(self.calculator.multiply(5, 5), 25)

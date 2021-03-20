@@ -3,7 +3,7 @@ def addition(a, b):
 
 
 def subtraction(a, b):
-    return a - b
+    return int(b) - int(a)
 
 
 def multiplication(a, b):
