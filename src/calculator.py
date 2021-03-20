@@ -19,7 +19,7 @@ def squaring(a):
 
 
 def squarerooting(a):
-    return a**0.5
+    return round((int(a)**0.5),8)
 
 
 class Calculator:
